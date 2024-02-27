@@ -9,7 +9,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./html:/usr/share/nginx/html
     deploy:
-      replicas: 1  # Scale nginx service to 3 replicas
+      replicas: 2  # Scale nginx service to 3 replicas
       placement:
         constraints: [node.role == worker]  # Only deploy on worker nodes
 
@@ -22,7 +22,7 @@ services:
     environment:
       - NODE_ENV=production
     deploy:
-      replicas: 1  # Scale app service to 2 replicas
+      replicas: 2  # Scale app service to 2 replicas
       resources:
         limits:
           cpus: '0.5'  # Limit CPU usage for each container
