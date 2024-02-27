@@ -14,7 +14,7 @@ services:
         constraints: [node.role == worker]  # Only deploy on worker nodes
 
   app:
-    build: ./app
+    image: my-registry/myapp-image:latest
     ports:
       - "3000:3000"
     volumes:
