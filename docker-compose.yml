@@ -22,7 +22,7 @@ services:
     environment:
       - NODE_ENV=production
     deploy:
-      replicas: 2  # Scale app service to 2 replicas
+      replicas: 1  # Scale app service to 2 replicas
       resources:
         limits:
           cpus: '0.5'  # Limit CPU usage for each container
